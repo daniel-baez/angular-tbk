@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="testPageApp">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>
+      Transbank Test Page
+    </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="uuid.js"></script>
+    <script src="testpage.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <form method="post" ng-controller="commonTransactionController" action="tbk_bp_pago.cgi">
+      <fieldset ng-repeat="(propertyName, property) in transaction">
+        <legend>
+          {{ $index + 1 }} {{ property.label }}
+        </legend>
+        <p ng-bind="property.description">
+        </p>
+        <input type="text" ng-required="{{ property.defaultValue != null }}" name="{{property.name}}" ng-model="property.defaultValue" />
+      </fieldset>
+      <fieldset>
+        <button type="submit">
+          Enviar
+        </button>
+      </fieldset>
+    </form>
+  </body>
+</html>
