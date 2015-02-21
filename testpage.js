@@ -30,13 +30,13 @@
         label: 'URL de exito',
         name: 'TBK_URL_EXITO',
         description: 'Página a llamar en caso de éxito en la transacción. Debe ser una dirección absoluta, para lograr el redireccionamiento del browser del cliente. largo 256 alfanúmerico',
-        defaultValue: $location.absUrl()
+        defaultValue: 'http://www.floreriasumonte.cl/cgi-bin/testpage.accepted.html'
       },
       f_failureURl: {
         label: 'URL de fracaso',
         name: 'TBK_URL_FRACASO',
         description: 'Página a llamar en caso de fracaso en la transacción. Debe ser una dirección absoluta, para lograr el redireccionamiento del browser del cliente. largo 256 alfanúmerico',
-        defaultValue: $location.absUrl()
+        defaultValue: 'http://www.floreriasumonte.cl/cgi-bin/testpage.failed.html'
       },
       g_couteAmount: {
         label: 'Monto cuota',
